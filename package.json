@@ -1,0 +1,8 @@
+{
+  "name": "employee-data-dataform",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@dataform/core": "^1.0.0"
+  }
+}

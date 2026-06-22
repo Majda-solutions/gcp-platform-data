@@ -1,0 +1,14 @@
+config {
+  type: "table"
+  description: "Staging employee table built from the external raw employee file."
+}
+
+select
+  employee_id_hash,
+  first_name,
+  last_name,
+  salary,
+  department,
+  hire_date
+from
+  ${ref("raw_employees_ext")}
