@@ -2,6 +2,5 @@
   "warehouse": "bigquery",
   "defaultSchema": "analytics",
   "assertionSchema": "dataform_assertions",
-  "projectId": "iam-project-498112",
   "database": "iam-project-498112"
 }
