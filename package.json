@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "@dataform/core": "^1.0.0"
+    "@dataform/core": "3.0.60"
   }
 }
