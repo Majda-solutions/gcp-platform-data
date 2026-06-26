@@ -39,7 +39,9 @@ jobs:
       - name: Create Dataform credentials file
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          echo "${{ secrets.GCP_SA_KEY }}" > .df-credentials.json
+          cat > .df-credentials.json <<EOF
+${{ secrets.GCP_SA_KEY }}
+EOF
 
       - name: Run Dataform project on push to main
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
