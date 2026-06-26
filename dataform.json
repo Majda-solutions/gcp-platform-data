@@ -1,6 +1,5 @@
 {
   "warehouse": "bigquery",
   "defaultSchema": "analytics",
-  "assertionSchema": "dataform_assertions",
-  "database": "iam-project-498112"
+  "assertionSchema": "dataform_assertions"
 }
