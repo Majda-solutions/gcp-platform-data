@@ -35,14 +35,3 @@ jobs:
 
       - name: Compile Dataform project
         run: npx @dataform/cli compile
-
-      - name: Create Dataform credentials file
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          cat > .df-credentials.json <<EOF
-${{ secrets.GCP_SA_KEY }}
-EOF
-
-      - name: Run Dataform project on push to main
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: npx @dataform/cli run
