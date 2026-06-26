@@ -1,23 +1,40 @@
-# dataform-bigquery - Dataform / SQLX for BigQuery
+# Dataform BigQuery project
 
-This repository contains Dataform SQLX logic to build staging tables in BigQuery based on the raw external table.
+This repository holds the Dataform SQLX code for a simple BigQuery transformation.
 
-## Setup
+It contains one transformation that builds a staging table from an existing raw table in BigQuery.
 
-1. Update `dataform.json` with your `projectId` and `database`.
-2. Install the Dataform CLI and dependencies:
+## What this repo does
 
-```
+- Stores the Dataform definitions in the `definitions` folder.
+- Uses SQLX files to define the transformation logic.
+- Works with GitHub Actions to check the project on pull requests and push to main.
+
+## Local setup
+
+1. Install Node.js.
+2. Run:
+
+```bash
 npm install
 ```
 
-## Run Dataform
+3. Compile the project:
 
+```bash
+npx @dataform/cli compile
 ```
-dataform run
-```
 
-## Contents
+## Workflow
 
-- `definitions/stg_employees.sqlx` builds `analytics.stg_employees` from the external raw table `analytics.raw_employees_ext`.
-- Column-level protection is configured via BigQuery policy tags in Terraform in repo1.
+The GitHub Actions workflow:
+
+- runs on pull requests to main
+- runs on pushes to main
+- compiles the Dataform project
+- runs the project on pushes to main when the required secrets are available
+
+## Main file
+
+- `definitions/stg_employees.sqlx` creates the staging table from `raw_employees_ext`.
+
