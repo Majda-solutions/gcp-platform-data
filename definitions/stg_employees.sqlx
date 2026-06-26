@@ -10,4 +10,4 @@ select
   department,
   hire_date
 from
-  ${ref("raw_employees_ext")}
+  `iam-project-498112.analytics.raw_employees_ext`
