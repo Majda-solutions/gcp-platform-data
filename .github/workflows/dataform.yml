@@ -34,8 +34,8 @@ jobs:
         run: npm install
 
       - name: Compile Dataform project
-        run: npx dataform compile
+        run: npx @dataform/cli compile
 
       - name: Run Dataform project on push to main
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: npx dataform run
+        run: npx @dataform/cli run
